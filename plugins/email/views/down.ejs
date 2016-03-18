@@ -1,0 +1,10 @@
+[监控报警] Uptime监控到该任务 "<%= check.name %>" 发生异常 
+On <%= moment(checkEvent.timestamp).format('LLLL') %>,
+a test on URL "<%= check.url %>" failed with the following error:
+
+    <%= checkEvent.details %>
+
+<% include details %>
+
+Uptime won't send anymore emails about this check until it goes back up.
+<% include footer %>

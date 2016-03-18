@@ -1,0 +1,12 @@
+<% if (checkEvent.downtime) { -%>
+[恢复正常] Uptime监控到该任务 "<%= check.name %>" 恢复正常
+On <%= moment(checkEvent.timestamp).format('LLLL') %>,
+and after <%= moment.duration(checkEvent.downtime).humanize() %> of downtime,
+<% } else { -%>
+[恢复正常] Uptime监控到该任务 "<%= check.name %>" 恢复正常
+On <%= moment(checkEvent.timestamp).format('LLLL') %>,
+<% }%>
+a test on URL "<%= check.url %>" responded correctly.
+
+<% include details %>
+<% include footer %>
